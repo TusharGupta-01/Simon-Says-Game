@@ -52,7 +52,7 @@ function userFlash(btn) {
   btn.classList.add("userFlash");
   setTimeout(function () {
     btn.classList.remove("userFlash");
-  }, 250);
+  }, 150);
 }
 
 function check(idx) {
