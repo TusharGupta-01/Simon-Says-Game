@@ -12,14 +12,33 @@ document.addEventListener("keypress", simonGame);
 let btn = document.querySelector("button");
 btn.addEventListener("click", simonGame);
 let h2 = document.querySelector("h2");
-//random color function
+let select = document.querySelector("select");
+let colors=["red","green","purple","yellow"];
+select.addEventListener("change",()=>{
+  let lvl=select.value;
+  let l2=document.querySelector(".line-two")
+  let l3=document.querySelector(".line-three")
+  if(lvl==="easy"){
+    colors=["red","green"];
+    l2.classList.add("disable");
+    l3.classList.add("disable");
+  }
+  else if(lvl==="medium"){
+    colors=["red","green","purple","yellow"];
+    l2.classList.remove("disable")
+    l3.classList.add("disable");
+  }
+  else{
+    colors=["red","green","purple","yellow","blue","orange"];
+    l2.classList.remove("disable")
+    l3.classList.remove("disable");
+  }
+})
 
-function randomColor() {
-  let num = Math.floor(Math.random() * 4 + 1);
-  if (num == 1) return "red";
-  if (num == 2) return "green";
-  if (num == 3) return "purple";
-  if (num == 4) return "yellow";
+//random color function
+function randomColor(color) {
+  let num = Math.floor(Math.random() * color.length )+ 1;
+  return color[num-1];
 }
 
 function gameFlash(btn) {
@@ -62,6 +81,7 @@ function reset() {
   for (b of btn) {
     b.removeEventListener("click", btnPress);
   }
+  select.disabled=false;
   userSeq = [];
   gameSeq = [];
   level = 0;
@@ -71,7 +91,7 @@ function levelUp() {
   userSeq = [];
   level++;
   h2.innerHTML = `Level ${level}`;
-  let color = randomColor();
+  let color = randomColor(colors);
   gameSeq[level - 1] = color;
   let btn = document.querySelector(`.${color}`);
   gameFlash(btn);
@@ -92,6 +112,7 @@ function simonGame() {
   }
   if (started == false) {
     started = true;
+    select.disabled=true;
     levelUp();
   }
 }

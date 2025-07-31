@@ -17,7 +17,7 @@ body{
 .btn{
     height: 200px;
     width: 200px;
-    margin: 2.5rem 1.5rem;
+    margin: 2rem 1rem;
     border: 5px solid black;
     border-radius: 20px;
 }
@@ -30,22 +30,37 @@ button{
     font-weight: 700;
 }
 .red{
-    background-color: #F05D5E;
+    background-color: #AE335A;
 }
 .green{
-    background-color: #0F7173;
+    background-color: #A2AB25;
 }
 .purple{
     background-color: #272932;
 }
 .yellow{
-    background-color: #D8A47F;
+    background-color: #fec978;
+}
+.blue{
+    background-color: #3b4d9a;
+}
+.orange{
+    background-color: #FC7A1E;
 }
 .flash{
     background-color:#E7ECEF;
 }
 .userFlash{
-    background-color: rgb(17, 255, 0);
+    background-color: rgb(255, 247, 0);
+}
+.disable{
+    display: none;
+}
+select{
+    height: 20px;
+    width: 100px;
+    border: 2px solid #272932;
+    border-radius: 4px;
 }
 @media (max-width:550px) or (max-height:730px) {
     .btn{
