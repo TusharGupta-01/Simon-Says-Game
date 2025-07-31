@@ -9,6 +9,8 @@ high.innerHTML=`Highest Score : ${highest}`;
 high.classList.add("highest");
 document.body.appendChild(high); 
 document.addEventListener("keypress", simonGame);
+let btn = document.querySelector("button");
+btn.addEventListener("click", simonGame);
 let h2 = document.querySelector("h2");
 //random color function
 
@@ -40,7 +42,7 @@ function check(idx) {
       setTimeout(levelUp, 250);
     }
   } else {
-    h2.innerHTML = `Game Over! Your Score is <b>${level}</b> <br> Press any key to start`;
+    h2.innerHTML = `Game Over! Your Score is <b>${level-1}</b> <br> Press any key to start `;
     document.querySelector("body").style.backgroundColor = "red";
     setTimeout(function () {
       document.querySelector("body").style.backgroundColor = "white";
