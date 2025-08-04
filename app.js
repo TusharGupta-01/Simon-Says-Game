@@ -9,11 +9,18 @@ high.innerHTML=`Highest Score : ${highest}`;
 high.classList.add("highest");
 document.body.appendChild(high); 
 document.addEventListener("keypress", simonGame);
-let btn = document.querySelector("button");
-btn.addEventListener("click", simonGame);
+let H2 = document.querySelector(".H2");
+H2.addEventListener("click",(event)=>{
+  if(event.target.nodeName === "BUTTON")
+  {
+    simonGame();
+    // btn.addEventListener("click", simonGame);
+  }
+});
 let h2 = document.querySelector("h2");
 let select = document.querySelector("select");
 let colors=["red","green","purple","yellow"];
+
 select.addEventListener("change",()=>{
   let lvl=select.value;
   let l2=document.querySelector(".line-two")
@@ -52,7 +59,7 @@ function userFlash(btn) {
   btn.classList.add("userFlash");
   setTimeout(function () {
     btn.classList.remove("userFlash");
-  }, 150);
+  }, 100);
 }
 
 function check(idx) {
@@ -61,7 +68,7 @@ function check(idx) {
       setTimeout(levelUp, 250);
     }
   } else {
-    h2.innerHTML = `Game Over! Your Score is <b>${level-1}</b> <br> Press any key to start `;
+    h2.innerHTML = `Game Over! Your Score is <b>${level-1}</b> <br> Press any key to <button class="start">Start</button>`;
     document.querySelector("body").style.backgroundColor = "red";
     setTimeout(function () {
       document.querySelector("body").style.backgroundColor = "white";

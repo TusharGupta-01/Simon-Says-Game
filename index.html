@@ -10,8 +10,17 @@
 
 <body>
     <h1>Simon Says Game</h1>
-    <h2>Press any key to start the game</h2>
-    <button>Start</button>
+    <div class="H2">
+
+        <h2>Press any key to <button class="start">Start</button> the
+            <select name="diff" id="diff">
+                <option value="easy">Easy</option>
+                <option value="medium" selected>Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            game </h2>
+    </div>
+            
     <div class="btn-container">
         <div class="line-one">
             <div class="btn red" type="button"></div>
@@ -26,11 +35,22 @@
             <div class="btn orange" type="button"></div>
         </div>
     </div>
-    <select name="diff" id="diff">
-            <option value="easy">Easy</option>
-            <option value="medium" selected>Medium</option>
-            <option value="hard">Hard</option>
-    </select>
+    <div class="rules"><ol>
+        <b>How to Play</b>
+        <li>Watch the Pattern:
+        The game will light up a series of colors. Watch carefully!
+        </li>
+        <li>Repeat the Colors:
+        When the pattern is done, tap the color buttons in the same order.
+        </li>
+        <li>Level Up:
+        Get it right? The pattern gets longer each round!</li>
+        <li> Miss a Step:
+        Make a mistake, and the game ends. Try again to beat your best score!</li>
+    </ol>
+    <br>
+        Tip: Stay focused and see how many colors you can remember!
+    </div>
     <script src="app.js"></script>
 </body>
 
